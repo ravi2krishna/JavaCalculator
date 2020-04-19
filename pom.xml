@@ -18,22 +18,4 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
-   <build>
-      <plugins>
-         <plugin>
-            <!-- Building an executable jar -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.1.0</version>
-            <configuration>
-               <archive>
-                  <manifest>
-                     <!-- give full qualified name of your main class-->
-                     <mainClass>com.ravi.cal.RaviCalculator.Calculator</mainClass>
-                  </manifest>
-               </archive>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
 </project>
