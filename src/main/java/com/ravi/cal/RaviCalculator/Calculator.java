@@ -33,7 +33,7 @@ public class Calculator {
 	// Product
 	public long mulFucn(long first, long second){
 		
-		return first/second;
+		return first*second;
 	}
 	
 	
