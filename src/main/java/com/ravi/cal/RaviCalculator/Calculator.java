@@ -46,6 +46,7 @@ public class Calculator {
 		
 		String output = String.format("\n*** Your Results ***\n\nFirst: %d\nSecond: %d\n\nSum : %d\nDifference : %d\nProduct : %d\n\n", cal.first, cal.second, cal.addFucn(first, second), cal.subFucn(first, second), cal.mulFucn(first, second));
 	    System.out.println(output);
+	    System.out.println("New Change Updated");
 	}
 	
 }
