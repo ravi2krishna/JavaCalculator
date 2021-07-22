@@ -5,22 +5,21 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
-	
-	Calculator cal = new Calculator(2, 3);
-	
+
+    Calculator cal = new Calculator(2, 3);
+
     @Test
-    public void twoAndThreeIsFive() throws Exception {
-    	assertEquals(cal.addFucn(2, 3),5);
+    public void sumTest() throws Exception {
+        assertEquals(5, cal.addFucn(2, 3));
     }
 
     @Test
-    public void threeMinusTwoIsOne() throws Exception {
-        assertEquals(cal.subFucn(2, 3),1);
+    public void differenceTest() throws Exception {
+        assertEquals(1, cal.subFucn(2, 3));
     }
-    
+
     @Test
-    public void threeXThreeIsNine() throws Exception {
-        assertEquals(cal.mulFucn(3, 3), 9);
+    public void productTest() throws Exception {
+        assertEquals(6, cal.mulFucn(2, 3));
     }
-   
 }
