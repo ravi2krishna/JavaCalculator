@@ -3,7 +3,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>com.ravi.cal</groupId>
    <artifactId>RaviCalculator</artifactId>
-   <version>0.1.1</version>
+   <version>0.1.2</version>
    <packaging>jar</packaging>
    <name>RaviCalculator</name>
    <url>http://maven.apache.org</url>
@@ -18,5 +18,22 @@
          <scope>test</scope>
       </dependency>
    </dependencies>
-   
+   <build>
+      <plugins>
+         <plugin>
+            <!-- Building an executable jar -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.1.0</version>
+            <configuration>
+               <archive>
+                  <manifest>
+                     <!-- give full qualified name of your main class-->
+                     <mainClass>com.ravi.cal.RaviCalculator.Calculator</mainClass>
+                  </manifest>
+               </archive>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 </project>
