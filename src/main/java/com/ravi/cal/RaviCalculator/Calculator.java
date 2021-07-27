@@ -18,7 +18,7 @@ public class Calculator {
 		return second;
 	}
 	
-	// Addition 
+	// Addition Function
 	public long addFucn(long first, long second){
 		
 		return first+second;
