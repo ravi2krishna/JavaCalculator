@@ -40,7 +40,7 @@ public class Calculator {
 		long second = Long.parseLong(args[1]);
 		
 		Calculator cal = new Calculator(first, second);
-		
+		System.out.println("New Change Added");
 		String output = String.format("\n*** Your Results ***\n\nFirst: %d\nSecond: %d\n\nSum : %d\nDifference : %d\nProduct : %d\n\n", cal.first, cal.second, cal.addFucn(first, second), cal.subFucn(first, second), cal.mulFucn(first, second));
 	    System.out.println(output);
 	}
