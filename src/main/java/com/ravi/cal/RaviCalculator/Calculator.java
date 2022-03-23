@@ -2,8 +2,8 @@ package com.ravi.cal.RaviCalculator;
 
 public class Calculator {
 
-	public long first;
-	public long second;
+	private long first;
+	private long second;
 	
 	public Calculator(long first, long second){
 		this.first = first;
