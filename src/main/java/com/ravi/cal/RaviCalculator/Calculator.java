@@ -1,4 +1,4 @@
-package com.ravi.cal.RaviCalculator;
+package com.kiran.cal.KiranCalculator;
 
 public class Calculator {
 
