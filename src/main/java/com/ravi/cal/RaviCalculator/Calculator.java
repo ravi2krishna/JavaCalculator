@@ -17,17 +17,20 @@ public class Calculator {
 	public long getSecond() {
 		return second;
 	}
-
+	
+	// Addition Function
 	public long addFucn(long first, long second){
 		
 		return first+second;
 	}
 	
+	// Difference 
 	public long subFucn(long first, long second){
 		
 		return second-first;
 	}
 	
+	// Product
 	public long mulFucn(long first, long second){
 		
 		return first*second;
