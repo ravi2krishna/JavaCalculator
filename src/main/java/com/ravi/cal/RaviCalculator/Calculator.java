@@ -30,10 +30,10 @@ public class Calculator {
 		return second-first;
 	}
 	
-	// Product - *
+	// Product
 	public long mulFucn(long first, long second){
 		
-		return first/second;
+		return first*second;
 	}
 	
 	
