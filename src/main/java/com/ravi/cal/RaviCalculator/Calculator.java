@@ -1,6 +1,6 @@
 package com.ravi.cal.RaviCalculator;
 
-public lass Calculator {
+public class Calculator {
 
 	public long first;
 	public long second;
