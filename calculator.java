@@ -88,4 +88,29 @@ public class HelloWorld {
     }
 }  // printing hello world
 
+import java.util.Scanner;
+
+public class PasswordProgram {
+    public static void main(String[] args) {
+        // Define the predefined password
+        String predefinedPassword = "mySecretPassword";
+
+        // Create a Scanner object to read user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a password
+        System.out.print("Enter the password: ");
+        String userInput = scanner.nextLine();
+
+        // Check if the user input matches the predefined password
+        if (userInput.equals(predefinedPassword)) {
+            System.out.println("Access granted! You entered the correct password.");
+        } else {
+            System.out.println("Access denied! Incorrect password.");
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
 
