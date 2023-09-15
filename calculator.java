@@ -114,3 +114,96 @@ public class PasswordProgram {
     }
 }
 
+// java notes app
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.*;
+
+public class NotesApp {
+    private JTextArea textArea;
+    private JFrame frame;
+
+    public NotesApp() {
+        frame = new JFrame("Notes App");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+
+        textArea = new JTextArea();
+        textArea.setFont(new Font("Arial", Font.PLAIN, 16));
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        frame.add(scrollPane, BorderLayout.CENTER);
+
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        JMenuItem saveMenuItem = new JMenuItem("Save");
+        JMenuItem loadMenuItem = new JMenuItem("Load");
+
+        saveMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                saveNotes();
+            }
+        });
+
+        loadMenuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadNotes();
+            }
+        });
+
+        fileMenu.add(saveMenuItem);
+        fileMenu.add(loadMenuItem);
+        menuBar.add(fileMenu);
+
+        frame.setJMenuBar(menuBar);
+        frame.setVisible(true);
+    }
+
+    private void saveNotes() {
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showSaveDialog(frame);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                writer.write(textArea.getText());
+                writer.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void loadNotes() {
+        JFileChooser fileChooser = new JFileChooser();
+        int result = fileChooser.showOpenDialog(frame);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File file = fileChooser.getSelectedFile();
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                StringBuilder sb = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line).append("\n");
+                }
+                textArea.setText(sb.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new NotesApp();
+            }
+        });
+    }
+}
